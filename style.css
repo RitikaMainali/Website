@@ -1,65 +1,103 @@
 body {
-    background-color: rgb(206, 170, 250);
+    background-color: rgb(205, 158, 255);
 }
-header{
-    background-color: rgb(253, 239, 193);
+header {
+    background-color: hsl(54, 100%, 92%); 
+    padding: 20px;
     text-align: center;
-    padding: 3px;
-    border-radius: 120px;
+    border-radius: 230px;
+    font-style: bold;
+    font-size: x-large;
+    font-family:"lucida Handwriting";
+
+}
+footer {
+    background-color: rgb(183, 123, 248);
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom:0;
+    left: 0;
+    right: 0;
+    margin: 20px;
+    border-radius:10px ;
+}
+footer:hover{
+    background-color: hsl(54, 100%, 92%);
 
 }
 h1 {
-    color:rgb(0, 0, 0);
-    font-size: 40px;
-    font-family: "Lucida Handwriting";
-    font-weight: bold; 
-
-    
-}
-.R {
-    color:rgb(0, 0, 0);
-    font-size: 40px;
-    font-family: "Times New Roman";
-    font-weight:lighter; 
-}
-.p {
-    text-align: center;
-    background-color: rgb(191, 157, 224);
-    font-size: 40px;
-    font-family: "Lucida Console", "Courier New", monospace;
-    font-weight: bold;
-
+    margin: 0;
 }
 
-
-a:link, a:visited{
-    background-color: rgb(253, 239, 193);
-    color: rgb(0, 0, 0);
-    position: absolute;
-    padding: 1px 5px;
-    bottom:0cm;
-    cursor: pointer;
-    border-radius: 50px;
-    font-family:'Times New Roman', Times, serif;
-    font-size:x-large;
-}
-
+.app {
   
-a:hover, a:active {
-    background-color: rgb(252, 172, 230);
-}
-ul li {
-    cursor: pointer;
-    position: relative;
-    padding: 12px 8px 12px 40px;
-    list-style-type: none;
-    background: #eee;
-    font-size: 18px;
-    transition: 0.2s;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
     
-    /* make the list items unselectable */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+}
+
+#taskInput {
+    padding: 10px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 3px;
+    width: 70%;
+}
+
+.addbtn {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.addbtn:hover {
+    background-color: #bfcbbf; 
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px;
+}
+
+li {
+    background-color:hsl(54, 100%, 92%);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+li:hover {
+    
+    background-color:rgb(190, 138, 246);
+    
+}
+
+.close {
+    float: right;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #f91100; 
+}
+
+.checked {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.checkmark {
+    margin-right: 20px;
+    font-size: 1.2em;
 }
