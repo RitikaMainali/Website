@@ -26,6 +26,10 @@
     var mynodelist = document.getElementsByTagName("li");
     var close = document.getElementsByClassName("close");
     var list = document.querySelector('ul');
+    document.addEventListener('DOMContentLoaded', function() {
+        loadList();
+    });
+
 
     for (var i = 0; i < mynodelist.length; i++) {
         var span = document.createElement("SPAN");
@@ -39,25 +43,29 @@
         close[i].onclick = function () {
             var div = this.parentElement;
             div.style.display = "none";
+            saveList();
+
         };
     }
 
     list.addEventListener('click', function (ev) {
         if (ev.target.tagName === 'LI') {
             ev.target.classList.toggle('checked');
+            saveList();
         }
-    }, false);
+    });
 
     function newElement() {
         var li = document.createElement("li");
         var inputValue = document.getElementById("taskInput").value;
         var t = document.createTextNode(inputValue);
         li.appendChild(t);
-
         if (inputValue === '') {
             alert("Write something to do!");
         } else {
             list.appendChild(li);
+            saveList();
+
         }
 
         document.getElementById("taskInput").value = '';
@@ -67,24 +75,39 @@
         span.className = "close";
         span.appendChild(txt);
         li.appendChild(span);
+        saveList();
 
         span.onclick = function () {
             var div = this.parentElement;
             div.style.display = "none";
+            saveList();
         }; 
 
     }
+
+    function loadList(){
+        var saveList= localStorage.getItem('taskList');
+        if (savedList) {
+            list.innerHTML = savedList;
+            addEventListeners();
+            saveList();
+            
+        }
+    }
+
+    function saveList() {
+        localStorage.setItem('taskList', list.innerHTML);
+        
+    }
+    addEventListeners();
+    
     function Enter(event) {
         if (event.key === "Enter") {
             newElement();
+            saveList();
         }
     }
     document.addEventListener('keydown', Enter);
-    
-
-    localStorage.taskInput = "taskInput";
-    localStorage.setItem("taskInput")
-
 </script>
 </body>
 </html>
