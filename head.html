@@ -2,34 +2,40 @@
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="java" type="text/js" href="script.js">
     <script src="/script.js"></script>
-    <title>Riti's Website</title>
+    <title>To Do List</title>
 </head>
 <body>
-<header>
-    <h1>To Do list</h1>
-</header>
+    <header>
+        <h1>To Do list</h1>
+    </header>
 
-<div class="app", id="addbtn">
-    <input type="text" id="taskInput" placeholder="Things To Do">
-    <button onclick="newElement()" class="addbtn">Add</button>
-    
-</div>
+    <div class="app", id="addbtn">
+        <input type="text" id="taskInput" placeholder="Things To Do">
+        <button onclick="newElement()" class="addbtn">Add</button>
+        
+    </div>
 
-<ul id="myUL">
-</ul>
-<footer>
-    <p><p><a href="file:///C:/Users/maina/OneDrive/Desktop/I.html/riti.html/">Website</a></p> </p>
-</footer>
+    <ul id="myUL" input type="checkbox" >
+    </ul>       
 
+    <footer>
+        <p><p><a href="file:///C:/Users/maina/OneDrive/Desktop/I.html/riti.html/">Website</a></p> </p>
+    </footer>
+</body>
 <script>
     var mynodelist = document.getElementsByTagName("li");
     var close = document.getElementsByClassName("close");
     var list = document.querySelector('ul');
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         loadList();
+        addEventListeners();
     });
 
+    function newElement() {
+        saveList();
+    }
 
     for (var i = 0; i < mynodelist.length; i++) {
         var span = document.createElement("SPAN");
@@ -44,7 +50,6 @@
             var div = this.parentElement;
             div.style.display = "none";
             saveList();
-
         };
     }
 
@@ -55,6 +60,18 @@
         }
     });
 
+    function addEventListeners() {
+        close = document.getElementsByClassName("close"); // Update close buttons
+        for (var i = 0; i < close.length; i++) {
+            close[i].onclick = function () {
+                var div = this.parentElement;
+                div.style.display = "none";
+                saveList();
+            };
+        }
+    }
+
+
     function newElement() {
         var li = document.createElement("li");
         var inputValue = document.getElementById("taskInput").value;
@@ -64,8 +81,6 @@
             alert("Write something to do!");
         } else {
             list.appendChild(li);
-            saveList();
-
         }
 
         document.getElementById("taskInput").value = '';
@@ -75,39 +90,31 @@
         span.className = "close";
         span.appendChild(txt);
         li.appendChild(span);
-        saveList();
 
         span.onclick = function () {
             var div = this.parentElement;
             div.style.display = "none";
             saveList();
-        }; 
-
+        };
+        saveList();
     }
 
-    function loadList(){
-        var saveList= localStorage.getItem('taskList');
+    function loadList() {
+        var savedList = localStorage.getItem('taskList');
         if (savedList) {
             list.innerHTML = savedList;
-            addEventListeners();
-            saveList();
-            
         }
     }
 
     function saveList() {
         localStorage.setItem('taskList', list.innerHTML);
-        
     }
-    addEventListeners();
-    
+
     function Enter(event) {
         if (event.key === "Enter") {
             newElement();
-            saveList();
         }
     }
     document.addEventListener('keydown', Enter);
 </script>
-</body>
 </html>

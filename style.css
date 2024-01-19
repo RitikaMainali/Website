@@ -1,6 +1,7 @@
 body {
     background-color: rgb(205, 158, 255);
 }
+
 header {
     background-color: hsl(54, 100%, 92%); 
     padding: 20px;
@@ -9,8 +10,8 @@ header {
     font-style: bold;
     font-size: x-large;
     font-family:"lucida Handwriting";
-
 }
+
 footer {
     background-color: rgb(183, 123, 248);
     text-align: center;
@@ -20,18 +21,15 @@ footer {
     left: 0;
     right: 0;
     margin: 20px;
-    border-radius:10px ;
+    border-radius:10px;
 }
+
 footer:hover{
     background-color: hsl(54, 100%, 92%);
 
 }
-h1 {
-    margin: 0;
-}
 
 .app {
-  
     padding: 15px;
     margin: 20px;
     border-radius: 50px;
@@ -42,10 +40,10 @@ h1 {
 
 #taskInput {
     padding: 10px;
-    margin-right: 10px;
-    border: none;
-    border-radius: 3px;
-    width: 70%;
+    border-radius: 30px;
+    width: 300px;
+    margin: 20px;
+    border: 5px solid #fce699;
 }
 
 .addbtn {
@@ -63,39 +61,43 @@ h1 {
 
 ul {
     list-style-type: none;
-    padding: 0;
+    padding: 10;
     margin: 20px;
+    position: relative;
 }
 
 li {
     background-color:hsl(54, 100%, 92%);
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    padding: 10px;
     cursor: pointer;
     transition: background-color 0.5s;
-}
-
-li:hover {
-    
-    background-color:rgb(190, 138, 246);
-    
+    border-radius: 40px;
+    margin: 20px;
+    border: 5px solid #cfa7a7;
+    max-width: 300px; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    position: relative;
 }
 
 .close {
-    float: right;
-    margin-left: 10px;
+    float: right ;
     cursor: pointer;
     font: 1.2em;
+    position:relative;
 }
 
 .close:hover {
     color: #f91100; 
+    width: 10;
 }
 
 .checked {
     text-decoration: line-through;
-    color: #888;
+    color: #524f4f;
+    color: rgb(88, 88, 93);
+    background-color: rgb(190, 138, 246);
+    transition: 0.4s;
     
 }
 
