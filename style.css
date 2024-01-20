@@ -8,7 +8,7 @@ header {
     text-align: center;
     border-radius: 230px;
     font-style: bold;
-    font-size: x-large;
+    font-size: large;
     font-family:"lucida Handwriting";
 }
 
@@ -30,33 +30,38 @@ footer:hover{
 }
 
 .app {
-    padding: 15px;
     margin: 20px;
     border-radius: 50px;
-    display: flex;
     align-items: center;
+    color: rgb(238, 237, 167);
+    padding: 10px;
+    cursor: pointer;
     
 }
 
 #taskInput {
     padding: 10px;
     border-radius: 30px;
-    width: 300px;
-    margin: 20px;
+    width: 500px;
+    margin: 10px;
     border: 5px solid #fce699;
 }
 
 .addbtn {
+    border: 5px solid #eedfa8;
     background-color: #ffffff;
     color: rgb(0, 0, 0);
-    border: none;
     padding: 10px;
     border-radius: 20px;
     cursor: pointer;
+    border: 5px solid #fce699;
+
+
 }
 
 .addbtn:hover {
-    background-color: #bfcbbf; 
+    background-color: #9c9b9b;
+    border: 5px solid #d2bd73;
 }
 
 ul {
